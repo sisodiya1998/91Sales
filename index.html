@@ -3,38 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>91Sale</title>
+    <title>91Sale - Your Online Store</title>
     <!-- Add Bootstrap CSS CDN link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-/* Style for the button */
-.call-button {
-  background-color: red; /* Change this to your desired button color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-/* Hover effect */
-.call-button:hover {
-  background-color: white; /* Change this to your desired hover color */
-}
-        body{
-            background-color:#7DCEA0 ;
+        body {
+            background-color: #f8f9fa;
+        
         }
+
+        .navbar {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            color: #007BFF;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .buy-button {
+            background-color: #0a73e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Discount Marquee Styles */
+        .discount-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #2f7ee4;
+            color: white;
+            padding: 5px 0;
+        }
+
+        .discount-text {
+            animation: marquee 20s linear infinite;
+            display: inline-block;
+            margin-right: 100%;
+            font-size: 1rem;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
     </style>
+    
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">91Sales</a>
+    
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">91Sale</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,106 +120,195 @@
             <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
             </li>
-<body>
-
-<!-- Button with the phone number -->
-<a href="tel:9193238838" class="call-button">Call Now: 919-323-8838</a>
-
-            
         </ul>
     </div>
 </nav>
+   <h3>Welcome to 91Sales</h3>
+  
+    <p>Your One-Stop Shop for Great Deals</p>
+    <!-- Discount Announcement Marquee -->
+    <div class="discount-marquee">
+        <span class="discount-text">Hurry! Get 30% to 50% off on every product. Call Now: <a href="tel:9193238838" style="color: rgb(224, 204, 16);">919-323-8838</a></span>
+    </div>
 
-<div id="home" class="container mt-4">
-    <h1>Welcome to 91Sales  Store</h1>
-    <p>Best offers Best Price Best Brands .</p>
-</div>
 
 <!-- Products Section -->
 <section id="products" class="container mt-4">
     <h2>Our Products</h2>
     <div class="row">
         <div class="col-md-4">
-            <div class="card">
+            <div class="product-card">
                 <img src="img/c-d-x-PDX_a_82obo-unsplash.jpg" class="card-img-top" alt="Product 1">
                 <div class="card-body">
-                    <h5 class="card-title">Product 1</h5>
-                    <p class="card-text">Description of Product 1.</p>
-                    <a href="#buy-form" class="btn btn-primary buy-btn" data-product="Product 1">Buy Now</a>
+                    <h5 class="product-title">Product 1</h5>
+                    <p class="product-description">High-quality product with amazing features.</p>
+                    <p class="product-price">$19.99</p>
+                    <!-- Quantity Dropdown -->
+                    
+                    <!-- Buy Now Button -->
+                    <a class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-product="Product 1">Buy Now</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/kenny-eliason-bE3_aFt85Y8-unsplash.jpg"card-img-top" alt="Product 2">
+            <div class="product-card">
+                <img src="img/kenny-eliason-bE3_aFt85Y8-unsplash.jpg" class="card-img-top" alt="Product 2">
                 <div class="card-body">
-                    <h5 class="card-title">Product 2</h5>
-                    <p class="card-text">Description of Product 2.</p>
-                    <a href="#buy-form" class="btn btn-primary buy-btn" data-product="Product 2">Buy Now</a>
+                    <h5 class="product-title">Product 2</h5>
+                    <p class="product-description">Another great product for you to explore.</p>
+                    <p class="product-price">$24.99</p>
+                    <!-- Quantity Dropdown -->
+                    
+                    <!-- Buy Now Button -->
+                    <a class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-product="Product 2">Buy Now</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="product-card">
                 <img src="img/luke-chesser-vCF5sB7QecM-unsplash.jpg" class="card-img-top" alt="Product 3">
                 <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                    <p class="card-text">Description of Product 3.</p>
-                    <a href="#buy-form" class="btn btn-primary buy-btn" data-product="Product 3">Buy Now</a>
+                    <h5 class="product-title">Product 3</h5>
+                    <p class="product-description">Discover the latest technology with Product 3.</p>
+                    <p class="product-price">$29.99</p>
+                    <!-- Quantity Dropdown -->
+                   
+                    <!-- Buy Now Button -->
+                    <a class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-product="Product 3">Buy Now</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Purchase Form Modal -->
+<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buyModalLabel">Buy Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="purchaseForm" action="https://formspree.io/f/mrgwkkon" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea class="form-control" id="address" name="address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-info">Product Information:</label>
+                        <textarea class="form-control" id="product-info" name="product-info" rows="4" readonly></textarea>
+                        <button type="button" class="btn btn-secondary edit-button" id="edit-product-info">Edit</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <select class="form-control" id="quantity-modal">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<!-- Add Bootstrap JS and Popper.js CDN links -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- JavaScript to handle the "Buy Now" button click and editing -->
+<script>
+    $(document).ready(function () {
+        var originalProductInfo = ''; // Variable to store the original product info
+
+        $('.buy-button').click(function () {
+            var product = $(this).data('product');
+            $('#product-info').val('Product: ' + product + ', Quantity: ' + $('#quantity-modal').val());
+            originalProductInfo = $('#product-info').val(); // Store the original product info
+            $('#buyModal').modal('show');
+        });
+
+        $('#edit-product-info').click(function () {
+            $('#product-info').prop('readonly', false); // Make the textarea editable
+            $('#edit-product-info').prop('disabled', true); // Disable the "Edit" button
+        });
+
+        $('#purchaseForm').submit(function (e) {
+            e.preventDefault();
+            // Process the form data here (you can send it to your server)
+            // Clear the form fields if needed
+            $('#name').val('');
+            $('#address').val('');
+            $('#mobile').val('');
+            $('#quantity-modal').val('1');
+            // Restore the original product info and make the textarea readonly
+            $('#product-info').val(originalProductInfo);
+            $('#product-info').prop('readonly', true);
+            $('#edit-product-info').prop('disabled', false); // Enable the "Edit" button
+            $('#buyModal').modal('hide'); // Close the modal
+        });
+    });
+</script>
 
 <!-- Contact Section -->
 <section id="contact" class="container mt-4">
     <h2>Contact Us</h2>
     <div class="row">
         <div class="col-md-6">
-            <form id="buy-form" action="https://formspree.io/f/mrgwkkon" method="POST">
-                <h3>Buy Product</h3>
+            <form id="contact-form" action="#" method="post">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
-                    <textarea class="form-control" id="address" name="address" rows="4" placeholder="Your Address" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="product-info">Product Information</label>
-                    <textarea class="form-control" id="product-info" name="product-info" rows="4" readonly></textarea>
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
         <div class="col-md-6">
             <address>
-                <!-- Contact Information -->
+                <h3>Our Location</h3>
+                <p>91Sales Store</p>
+                <p>TYC Pashe 2, Agra 282002</p>
+                <p>Mobile: <a href="tel:9193238838">919-323-8838</a></p>
             </address>
         </div>
     </div>
 </section>
-<!-- Add Bootstrap JS and Popper.js CDN links -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- JavaScript to handle the "Buy Now" button click -->
-<script>
-    $(document).ready(function () {
-        $('.buy-btn').click(function () {
-            var product = $(this).data('product');
-            $('#product-info').val('Product: ' + product);
-            $('#buy-form').show();
-        });
-    });
-</script>
 
+<!-- Footer Section -->
+<footer class="container mt-4 text-center">
+    <p>&copy; 2023 91Sales Store | TYC Pashe 2, Agra 282002 | Mobile: <a href="tel:9193238838">919-323-8838</a></p>
+    
+    <!-- Social Media Links -->
+    <div>
+        <a href="https://www.facebook.com/profile.php?id=61550774830550&mibextid=ZbWKwL" target="_blank">Facebook</a> |
+        <a href="https://instagram.com/91sales?igshid=NzZhOTFlYzFmZQ==" target="_blank">Instagram</a>
+    </div>
+</footer>
 </body>
 </html>
