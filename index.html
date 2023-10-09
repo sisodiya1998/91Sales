@@ -5,88 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>91Sale - Your Online Store</title>
     <!-- Add Bootstrap CSS CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
-      body {
-        background-color: #f8f9fa;
-      }
+    /* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
-      .navbar {
-        background-color: #343a40;
-        color: white;
-      }
+/* Set a background color and default font */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding-top: 78px; /* Adjust this value to match the navbar's height */
+}
 
-      .navbar-dark .navbar-toggler-icon {
-        background-color: white;
-      }
+/* Navigation bar styles */
+.navbar {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 0;
+  position: fixed; /* Set the position to fixed */
+  width: 100%; /* Make the navbar full-width */
+  top: 0; /* Position it at the top of the viewport */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
 
-      .carousel-item img {
-        max-height: 400px;
-        margin: 0 auto;
-      }
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 5px;
+}
 
-      .product-card {
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        transition: transform 0.2s;
-      }
+.navbar-nav {
+  margin-left: auto;
+}
 
-      .product-card:hover {
-        transform: scale(1.05);
-      }
+.nav-item {
+  margin-right: 15px;
+}
 
-      .product-card img {
-        max-height: 400px;
-        object-fit: cover;
-      }
+.nav-link {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
-      .product-title {
-        font-size: 1.25rem;
-      }
+.nav-link:hover {
+  color: #ffc107;
+}
 
-      .product-amazon-price {
-        font-size: 1rem;
-        color: #e53e3e; /* Amazon price color */
-      }
+/* Header message styles */
+.header-message {
+  background-color: #ffc107;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
 
-      .product-price {
-        font-size: 1rem;
-        color: #007bff;
-      }
+/* Product card styles */
+.product-card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
 
-      .contact-form {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 
-      .buy-button {
-        background-color: #0a73e2;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-      }
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+}
 
-      .buy-button:hover {
-        background-color: #0056b3;
-      }
+.product-image img:hover {
+  transform: scale(1.1);
+}
 
-      /* Discount Marquee Styles */
-      .discount-marquee {
+.product-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #007bff;
+  margin: 0;
+}
+
+.product-stock-status {
+  font-size: 0.9rem;
+  color: #e53e3e;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  background-color: #0a73e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  display: block;
+  margin: 0 auto;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-left: 0;
+  }
+
+  .nav-item {
+    margin-right: 10px;
+  }
+
+  .product-card {
+    margin-bottom: 20px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+  }
+
+  .product-description {
+    font-size: 0.8rem;
+  }
+
+  .product-price {
+    font-size: 1rem;
+  }
+
+  .product-stock-status {
+    font-size: 0.8rem;
+  }
+}
+
+/* Discount Marquee Styles */
+.discount-marquee {
         overflow: hidden;
         white-space: nowrap;
-        background-color: #2f7ee4;
-        color: white;
+        background-color: #e7ecf1;
+        color: rgb(63, 89, 231);
         padding: 5px 0;
       }
 
@@ -106,13 +199,46 @@
         }
       }
 
-      .header-message {
-        background-color: #ffc107; /* Yellow background */
-        color: #333; /* Dark text color */
-        padding: 10px;
-        text-align: center;
-      }
-    </style>
+      /* Style for the WhatsApp container */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    right: 20px; /* Adjust the distance from the right as needed */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Style for the WhatsApp icon */
+.whatsapp-icon {
+    background-color: #25d366; /* WhatsApp green color */
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect for the icon */
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Style for the support WhatsApp icon */
+.whatsapp-container.support {
+    bottom: 90px; /* Adjust the distance for the support icon */
+}
+
+/* Style for the buy WhatsApp icon */
+.whatsapp-container.buy {
+    bottom: 160px; /* Adjust the distance for the buy icon */
+}
+
+
+
+</style>
+</head>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -144,12 +270,18 @@
         </ul>
       </div>
     </nav>
+    <div class="whatsapp-container buy">
+      <a href="https://wa.me/8449238838" target="_blank" class="whatsapp-icon">
+          <i class="fab fa-whatsapp"></i>
+      </a>
+  </div>
+
 
     <!-- Discount Announcement Marquee -->
     <div class="discount-marquee">
       <span class="discount-text"
-        >Hurry! Get 30% to 50% off on every product. Call Now:
-        <a href="tel:8449238838" style="color: rgb(224, 204, 16)"
+        >Hurry! <span style="color: #ffc107;">This Diwali Best Diwali</span>  Get 30% to 50% Off On Every Product. Call Now:
+        <a href="tel:8449238838" style="color: #ffc107"
           >844-923-8838</a
         ></span
       >
@@ -165,7 +297,7 @@
     <section id="products" class="container mt-4">
       <h2>Our Products</h2>
       <div class="row">
-         <div class="col-md-4">
+        <div class="col-md-4">
           <!-- Repeat this block for Product 3 -->
           <div class="product-card">
             <div
@@ -190,28 +322,35 @@
                 </div>
               </div>
             </div>
+            <!-- Inside each product card -->
+            <!-- Inside each product card -->
             <div class="card-body">
               <h5 class="product-title">Infinity JBL Glide 120</h5>
               <p class="product-description">
                 Infinity - JBL Glide 120, in Ear Wireless Earphones with Mic,
                 Deep Bass, Dual Equalizer, 12mm Drivers, Premium Metal Earbuds,
                 Comfortable Flex Neckband, Bluetooth 5.0, IPX5 Sweatproof
-                 
               </p>
               <!-- Amazon Price -->
               <p class="product-amazon-price">Amazon Price: ₹999</p>
               <!-- 91Sale Price -->
               <p class="product-price">91Sales Price: ₹699</p>
-              <!-- Discounted Price -->
-              <!-- Quantity Dropdown -->
-
-              <!-- Buy Now Button -->
+              <!-- Stock Status - Set the stock manually -->
+              <p class="product-stock-status">Stock: 0</p>
+              <!-- Change to 0 for out of stock -->
+              <!-- Buy Now Button - Call buyProduct function with product name and stock -->
               <a
                 class="btn btn-primary buy-button"
-                data-toggle="modal"
-                data-target="#buyModal"
-                data-product="Product 3"
-                >Buy Now</a
+                onclick="buyProduct('Infinity JBL Glide 120', 0)"
+                <!--
+                Pass
+                product
+                name
+                and
+                stock
+                --
+              >
+                Buy Now</a
               >
             </div>
           </div>
@@ -244,30 +383,36 @@
             <div class="card-body">
               <h5 class="product-title">Redmi 2c buds</h5>
               <p class="product-description">
-               REDMI Earbuds 2C Truly Wireless Earbuds with Bluetooth 5.0, 
-                Upto 12 hrs Playback Bluetooth Headset (Black)
-                DSP Environmental Noise Cancellation take calls
-                without the hassle of messy wires.
+                REDMI Earbuds 2C Truly Wireless Earbuds with Bluetooth 5.0, Upto
+                12 hrs Playback Bluetooth Headset (Black) DSP Environmental
+                Noise Cancellation take calls without the hassle of messy wires.
               </p>
               <!-- Amazon Price -->
               <p class="product-amazon-price">flipkart Price: ₹1489</p>
               <!-- 91Sale Price -->
               <p class="product-price">91Sales Price: ₹790</p>
+              <p class="product-stock-status">Stock: 20</p>
               <!-- Discounted Price -->
               <!-- Quantity Dropdown -->
 
               <!-- Buy Now Button -->
               <a
                 class="btn btn-primary buy-button"
-                data-toggle="modal"
-                data-target="#buyModal"
-                data-product="Product 2"
-                >Buy Now</a
+                onclick="buyProduct('Infinity JBL Glide 120', 20)"
+                <!--
+                Pass
+                product
+                name
+                and
+                stock
+                --
+              >
+                Buy Now</a
               >
             </div>
           </div>
         </div>
-       
+
         <div class="col-md-4">
           <!-- Repeat this block for Product 3 -->
           <div class="product-card">
@@ -296,25 +441,31 @@
             <div class="card-body">
               <h5 class="product-title">OnePlus Band</h5>
               <p class="product-description">
-                 13 Exercise Modes, Blood Oxygen Saturation
-                (SpO2), Heart Rate & Sleep Tracking, 5ATM+Water & Dust
-                Resistant(Android & iOS Compatible)
-                look cool every time you wear OnePlus Band.
+                13 Exercise Modes, Blood Oxygen Saturation (SpO2), Heart Rate &
+                Sleep Tracking, 5ATM+Water & Dust Resistant(Android & iOS
+                Compatible) look cool every time you wear OnePlus Band.
               </p>
               <!-- Amazon Price -->
               <p class="product-amazon-price">Flipkart Price: ₹2799</p>
               <!-- 91Sale Price -->
               <p class="product-price">91Sales Price: ₹899</p>
+              <p class="product-stock-status">Stock: 0</p>
               <!-- Discounted Price -->
               <!-- Quantity Dropdown -->
 
               <!-- Buy Now Button -->
               <a
                 class="btn btn-primary buy-button"
-                data-toggle="modal"
-                data-target="#buyModal"
-                data-product="Product 3"
-                >Buy Now</a
+                onclick="buyProduct('Infinity JBL Glide 120', 0)"
+                <!--
+                Pass
+                product
+                name
+                and
+                stock
+                --
+              >
+                Buy Now</a
               >
             </div>
           </div>
@@ -518,5 +669,6 @@
         >
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
